@@ -59,6 +59,28 @@ var $Manager = {
 			$Manager.load($btn);
 		});
 
+    //CUANDO BLUR EN TITULO
+    $('#titlepost').on('blur', function(){
+
+      var _this = $(this);
+      if(_this.val() == ""){
+        alert('El título no puede estar vacio!')
+        return false;
+      }
+
+      var slug  = $('[name=slug]');
+      slug.val('Cargando...');
+      var art   = $('#edit-post');
+      var url = art.attr('action');      
+
+      $.get('/admin/get-url', {title:_this.val(), route:url}, function(data){        
+        slug.val(data.new_slug);
+      }).fail(function() {
+        alert( "esta url esta repetida!");        
+      });
+    });
+
+
   }); //end load  
 	
 	function initLoad()
