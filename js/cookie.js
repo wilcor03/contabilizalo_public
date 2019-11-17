@@ -25,7 +25,7 @@ $(function(){
   };
 });*/
 
-/*
+
 $(function(){
 	showModalCookie();
 });
@@ -59,4 +59,4 @@ function showModalCookie()
   {
 	$('#myModal').modal('show');
   }
-}*/
+}
