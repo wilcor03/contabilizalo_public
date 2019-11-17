@@ -39,6 +39,7 @@ function showModalCookie()
 	if(C_entries > 1)
 	{
 	  Cookies.set('show_modal', false);
+	  $('#myModal').remove();
 	}
 	else
 	{
