@@ -50,14 +50,20 @@ function showModalCookie()
   }
   else
   {
-	Cookies.set('entries', 1);
-	Cookies.set('show_modal', true);
+		Cookies.set('entries', 1);
+		Cookies.set('show_modal', true);
   }
 
   var C_show_modal = Cookies.get('show_modal');
 
   if(C_show_modal == "true")
   {
-	$('#myModal').modal('show');
+		$('#myModal').modal('show');
   }
+
+  $('#closeModal').click(function(){
+  	setTimeout(() => {
+  		$('#myModal').remove();
+  	}, 500);  	
+  });
 }
