@@ -61,9 +61,7 @@ function showModalCookie()
 		$('#myModal').modal('show');
   }
 
-  $('#closeModal').click(function(){
-  	setTimeout(() => {
-  		$('#myModal').remove();
-  	}, 500);  	
-  });
+  $('#myModal').on('hidden.bs.modal', function (e) {
+	  $('#myModal').remove();
+	})
 }
