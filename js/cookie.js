@@ -25,36 +25,37 @@ $(function(){
   };
 });*/
 
+//en adelante el modal
 
-$(function(){
+$(function(){	
 	showModalCookie();
 });
 
 function showModalCookie()
 {
-  var C_entries = parseInt(Cookies.get('entries'));
+  var C_entries = parseInt(Cookies.get('entries1'));
 
   if(!isNaN(C_entries))
   {
 	if(C_entries > 1)
 	{
-	  Cookies.set('show_modal', false);
+	  Cookies.set('show_modal1', false);
 	  $('#myModal').remove();
 	}
 	else
 	{
 	  var C_counter = C_entries + 1;
-	  Cookies.set('entries', C_counter);
-	  Cookies.set('show_modal', true);
+	  Cookies.set('entries1', C_counter);
+	  Cookies.set('show_modal1', true);
 	}
   }
   else
   {
-		Cookies.set('entries', 1);
-		Cookies.set('show_modal', true);
+		Cookies.set('entries1', 1);
+		Cookies.set('show_modal1', true);
   }
 
-  var C_show_modal = Cookies.get('show_modal');
+  var C_show_modal = Cookies.get('show_modal1');
 
   if(C_show_modal == "true")
   {
