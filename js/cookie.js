@@ -33,11 +33,11 @@ $(function(){
 
 function showModalCookie()
 {
-  var C_entries = parseInt(Cookies.get('entries1'));
+  var C_entries = parseInt(Cookies.get('entries2'));
 
   if(!isNaN(C_entries))
   {
-	if(C_entries > 1)
+	if(C_entries > 2)
 	{
 	  Cookies.set('show_modal1', false);
 	  $('#myModal').remove();
@@ -45,13 +45,13 @@ function showModalCookie()
 	else
 	{
 	  var C_counter = C_entries + 1;
-	  Cookies.set('entries1', C_counter);
+	  Cookies.set('entries2', C_counter);
 	  Cookies.set('show_modal1', true);
 	}
   }
   else
   {
-		Cookies.set('entries1', 1);
+		Cookies.set('entries2', 1);
 		Cookies.set('show_modal1', true);
   }
 
@@ -59,10 +59,22 @@ function showModalCookie()
 
   if(C_show_modal == "true")
   {
-		$('#myModal').modal('show');
+		//$('#myModal').modal('show');
+
+	setTimeout(function(){
+      $('#myModal').modal('show');
+      setTimeout(function(){
+      	$("#video").attr('src', 'https://www.youtube.com/embed/CZ8a6pVnVT8?autoplay=1');
+      }, 300);      
+    }, 3000);
+
+    /*$('#myModal').on('hidden.bs.modal', function (e) {
+      
+    });*/
   }
 
   $('#myModal').on('hidden.bs.modal', function (e) {
 	  $('#myModal').remove();
+	  $('#video').attr('src', '');
 	})
 }
