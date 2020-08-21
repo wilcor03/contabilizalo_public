@@ -27,7 +27,7 @@ $(function(){
 
 //en adelante el modal
 
-$(function(){	
+$(function(){
 	showModalCookie();
 });
 
