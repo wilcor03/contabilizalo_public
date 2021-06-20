@@ -27,17 +27,17 @@ $(function(){
 
 //en adelante el modal
 
-$(function(){
+$(function(){	
 	showModalCookie();
 });
 
 function showModalCookie()
 {
-  var C_entries = parseInt(Cookies.get('entries2'));
+  var C_entries = parseInt(Cookies.get('entries3'));
 
   if(!isNaN(C_entries))
   {
-	if(C_entries > 2)
+	if(C_entries > 1)
 	{
 	  Cookies.set('show_modal1', false);
 	  $('#myModal').remove();
@@ -45,13 +45,13 @@ function showModalCookie()
 	else
 	{
 	  var C_counter = C_entries + 1;
-	  Cookies.set('entries2', C_counter);
+	  Cookies.set('entries3', C_counter);
 	  Cookies.set('show_modal1', true);
 	}
   }
   else
   {
-		Cookies.set('entries2', 1);
+		Cookies.set('entries3', 1);
 		Cookies.set('show_modal1', true);
   }
 
@@ -62,19 +62,20 @@ function showModalCookie()
 		//$('#myModal').modal('show');
 
 	setTimeout(function(){
-      $('#myModal').modal('show');
-      setTimeout(function(){
+      /*$('#myModal').modal('show');*/
+      $('#btnmodal').click();
+      /*setTimeout(function(){
       	$("#video").attr('src', 'https://www.youtube.com/embed/CZ8a6pVnVT8?autoplay=1');
-      }, 300);      
-    }, 3000);
+      }, 300);*/
+    }, 10000);
 
     /*$('#myModal').on('hidden.bs.modal', function (e) {
       
     });*/
   }
 
-  $('#myModal').on('hidden.bs.modal', function (e) {
+  /*$('#myModal').on('hidden.bs.modal', function (e) {
 	  $('#myModal').remove();
 	  $('#video').attr('src', '');
-	})
+	});*/
 }
